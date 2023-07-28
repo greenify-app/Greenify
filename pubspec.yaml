@@ -1,5 +1,5 @@
 name: greenify
-description: A new Flutter project.
+description: Live a greener life with Greenify!
 
 publish_to: "none"
 
@@ -25,3 +25,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/logo.png
+
+
