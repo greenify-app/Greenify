@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import '../auth.dart';
+import 'auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -81,6 +81,19 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  Widget _googleSignInButton() {
+  return ElevatedButton(
+    onPressed: () async {
+      try {
+        await Auth().signInWithGoogle();
+      } on FirebaseAuthException {
+      }
+    },
+    child: const Text('Sign in with Google'),
+  );
+}
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -100,6 +113,7 @@ class _LoginPageState extends State<LoginPage> {
             _errorMessage(),
             _submitButton(),
             _loginOrRegisterButton(),
+            _googleSignInButton(),
           ],
         )
       ),

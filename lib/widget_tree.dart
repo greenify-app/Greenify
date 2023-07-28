@@ -1,7 +1,7 @@
 import 'package:greenify/auth.dart';
 import 'package:flutter/material.dart';
-import 'package:greenify/pages/home_page.dart';
-import 'package:greenify/pages/login_register_page.dart';
+import 'package:greenify/home.dart';
+import 'package:greenify/login.dart';
 
 class WidgetTree extends StatefulWidget {
   const WidgetTree({super.key});
@@ -19,7 +19,7 @@ class _WidgetTreeState extends State<WidgetTree> {
         if (snapshot.hasData) {
           return HomePage();
         } else {
-          return LoginPage();
+          return const LoginPage();
           }
       })
     );
