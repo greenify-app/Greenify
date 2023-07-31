@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 import '../auth.dart';
 
 class GoogleSignInButton extends StatelessWidget {
+
+  final String displaytext;
+
   const GoogleSignInButton({
+    required this.displaytext,
     Key? key,
   }) : super(key: key);
 
@@ -17,10 +21,9 @@ class GoogleSignInButton extends StatelessWidget {
           print('Error signing in with Google: ${e.message}');
         }
       },
-      child: FractionallySizedBox(
-  widthFactor: 0.9, // Adjust the width factor as needed (0.0 to 1.0)
   child: Container(
-    height: 55,
+    width: 313,
+    height: 52,
     decoration: ShapeDecoration(
       color: Colors.white,
       shape: RoundedRectangleBorder(
@@ -59,8 +62,8 @@ class GoogleSignInButton extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 10),
-        const Text(
-          'Signup With Google',
+        Text(
+          displaytext,
           style: TextStyle(
             color: Color(0xFF103F2B),
             fontSize: 16,
@@ -71,8 +74,6 @@ class GoogleSignInButton extends StatelessWidget {
       ],
     ),
   ),
-)
-
-    );
+);
   }
 }

@@ -13,13 +13,13 @@ class InputBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 333,
-      height: 48,
+      width: 313,
+      height: 50,
       child: Stack(
         children: [
           Container(
-            width: 333,
-            height: 48,
+            width: 313,
+            height: 50,
             decoration: BoxDecoration(
               color: const Color(0x4C2A8F42),
               borderRadius: BorderRadius.circular(10),

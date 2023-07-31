@@ -18,6 +18,7 @@ class _LoginPageState extends State<LoginPage> {
 
   final TextEditingController _controllerEmail = TextEditingController();
   final TextEditingController _controllerPassword = TextEditingController();
+  final TextEditingController _controllerConfirmPassword = TextEditingController();
 
   Future<void> signInWithEmailAndPassword() async {
     try {
@@ -51,14 +52,26 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _submitButton() {
   return Container(
-    width: 333,
-    height: 48,
+    width: 313,
+    height: 50,
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(10),
     ),
     child: TextButton(
-      onPressed: isLogin ? signInWithEmailAndPassword : createUserWithEmailAndPassword,
-      style: ButtonStyle(
+        onPressed: isLogin
+            ? signInWithEmailAndPassword
+            : () {
+                // Perform additional check for password confirmation in register mode
+                if (_controllerPassword.text == _controllerConfirmPassword.text) {
+                  createUserWithEmailAndPassword();
+                } else {
+                  setState(() {
+                    errorMessage = 'Passwords do not match';
+                  },
+                  );
+                }
+              },
+              style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF103F2B)),
         shape: MaterialStateProperty.all<OutlinedBorder>(
           RoundedRectangleBorder(
@@ -70,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
         isLogin ? 'LOGIN' : 'REGISTER',
         style: const TextStyle(
           color: Colors.white,
-          fontSize: 16,
+          fontSize: 16.5,
           fontFamily: 'Montserrat',
           fontWeight: FontWeight.w700,
         ),
@@ -85,44 +98,90 @@ class _LoginPageState extends State<LoginPage> {
       onPressed: () {
         setState(() {
           isLogin = !isLogin;
+          _controllerPassword.clear();
+          _controllerConfirmPassword.clear();
         });
       },
-      child: Text(isLogin
-          ? 'Need an account ? Register'
-          : 'Already have an account ? Login'),
+      child: Text.rich(
+  TextSpan(
+    children: [
+      TextSpan(
+        text: isLogin? 'Don’t have an account yet? ' : 'Already have an account? ',
+        style: TextStyle(
+          color: Color(0xFF103F2B),
+          fontSize: 15,
+          fontStyle: FontStyle.italic,
+          fontFamily: 'Montserrat',
+          fontWeight: FontWeight.w300,
+        ),
+      ),
+      TextSpan(
+        text: isLogin? 'Sign Up' : 'Login',
+        style: TextStyle(
+          color: Color(0xFFE01010),
+          fontSize: 15,
+          fontStyle: FontStyle.italic,
+          fontFamily: 'Montserrat',
+          fontWeight: FontWeight.w300,
+        ),
+      ),
+    ],
+  ),
+)
     );
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
+Widget build(BuildContext context) {
+  return Scaffold(
+    body: SingleChildScrollView( // Wrap with SingleChildScrollView
+      child: Container(
+        color: Color.fromARGB(255, 234, 241, 238),
+        height: MediaQuery.of(context).size.height, // Adjust height
+        width: MediaQuery.of(context).size.width, // Adjust width
         padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            const Logo(width: 100, height: 100),
+            SizedBox(height: 65),
+            const Logo(width: 125, height: 125),
+            SizedBox(height: 60),
             InputBox(
               title: 'Email',
               controller: _controllerEmail,
             ),
+            SizedBox(height: 20),
             InputBox(
               title: 'Password',
               controller: _controllerPassword,
             ),
+            if (!isLogin)
+              SizedBox(height: 20),
+            if (!isLogin)
+              InputBox(
+                title: 'Confirm Password',
+                controller: _controllerConfirmPassword,
+              ),
+            SizedBox(height: 10),
             _errorMessage(),
+            SizedBox(height: 10),
             _submitButton(),
-            _loginOrRegisterButton(),
+            SizedBox(height: 30),
             const Or(),
-            const GoogleSignInButton(),
+            SizedBox(height: 20),
+            GoogleSignInButton(
+              displaytext: isLogin? 'Login With Google' : 'Signup With Google',
+            ),
+            SizedBox(height: 20),
+            _loginOrRegisterButton(),
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
+
 }
 
 class Or extends StatelessWidget {
