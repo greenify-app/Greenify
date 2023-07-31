@@ -39,6 +39,10 @@ class HomePage extends StatelessWidget {
                 children: <Widget>[
                   _userUid(),
                   _signOutButton(),
-                ])));
+                ]))
+               );
   }
 }
+
+
+

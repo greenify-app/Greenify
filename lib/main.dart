@@ -25,7 +25,6 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> _initializeApp() async {
-    // Simulate some delay for initialization
     await Future.delayed(const Duration(seconds: 2));
     setState(() {
       _isLoading = false;

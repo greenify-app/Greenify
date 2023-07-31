@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:greenify/widgets/login_input_box.dart';
+import 'package:greenify/widgets/logo_image.dart';
+import 'package:greenify/widgets/google_sign_in_button.dart';
 import 'auth.dart';
 
 class LoginPage extends StatefulWidget {
@@ -26,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         errorMessage = e.message;
       });
-    } 
+    }
   }
 
   Future<void> createUserWithEmailAndPassword() async {
@@ -39,23 +42,7 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         errorMessage = e.message;
       });
-    } 
-  }
-
-  Widget _title() {
-    return const Text('FirebaseAuth Demo');
-  }
-
-  Widget _entryField(
-    String title,
-    TextEditingController controller,
-  ) {
-    return TextField(
-      controller:  controller,
-      decoration: InputDecoration(
-        labelText: title,
-      ),
-    );
+    }
   }
 
   Widget _errorMessage() {
@@ -63,12 +50,35 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _submitButton() {
-    return ElevatedButton(
-      onPressed: 
-      isLogin ? signInWithEmailAndPassword : createUserWithEmailAndPassword,
-      child: Text(isLogin ? 'Login' : 'Register'),
-    );
-  }
+  return Container(
+    width: 333,
+    height: 48,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(10),
+    ),
+    child: TextButton(
+      onPressed: isLogin ? signInWithEmailAndPassword : createUserWithEmailAndPassword,
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF103F2B)),
+        shape: MaterialStateProperty.all<OutlinedBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+      ),
+      child: Text(
+        isLogin ? 'LOGIN' : 'REGISTER',
+        style: const TextStyle(
+          color: Colors.white,
+          fontSize: 16,
+          fontFamily: 'Montserrat',
+          fontWeight: FontWeight.w700,
+        ),
+      ),
+    ),
+  );
+}
+
 
   Widget _loginOrRegisterButton() {
     return TextButton(
@@ -77,29 +87,15 @@ class _LoginPageState extends State<LoginPage> {
           isLogin = !isLogin;
         });
       },
-      child: Text(isLogin ? 'Need an account ? Register' : 'Already have an account ? Login'),
+      child: Text(isLogin
+          ? 'Need an account ? Register'
+          : 'Already have an account ? Login'),
     );
   }
-
-  Widget _googleSignInButton() {
-  return ElevatedButton(
-    onPressed: () async {
-      try {
-        await Auth().signInWithGoogle();
-      } on FirebaseAuthException {
-      }
-    },
-    child: const Text('Sign in with Google'),
-  );
-}
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: _title(),
-      ),
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -108,15 +104,88 @@ class _LoginPageState extends State<LoginPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            _entryField('email', _controllerEmail),
-            _entryField('password', _controllerPassword),
+            const Logo(width: 100, height: 100),
+            InputBox(
+              title: 'Email',
+              controller: _controllerEmail,
+            ),
+            InputBox(
+              title: 'Password',
+              controller: _controllerPassword,
+            ),
             _errorMessage(),
             _submitButton(),
             _loginOrRegisterButton(),
-            _googleSignInButton(),
+            const Or(),
+            const GoogleSignInButton(),
           ],
-        )
+        ),
       ),
+    );
+  }
+}
+
+class Or extends StatelessWidget {
+  const Or({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          width: 106,
+          height: 18,
+          child: Stack(
+            children: [
+              const Positioned(
+                left: 42,
+                top: 0,
+                child: Text(
+                  'OR',
+                  style: TextStyle(
+                    color: Color(0xFF103F2B),
+                    fontSize: 15,
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w200,
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 0,
+                top: 9,
+                child: Container(
+                  width: 30,
+                  decoration: const ShapeDecoration(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        width: 0.50,
+                        strokeAlign: BorderSide.strokeAlignCenter,
+                        color: Color(0xFF103F2B),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 76,
+                top: 9,
+                child: Container(
+                  width: 30,
+                  decoration: const ShapeDecoration(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        width: 0.50,
+                        strokeAlign: BorderSide.strokeAlignCenter,
+                        color: Color(0xFF103F2B),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
