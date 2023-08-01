@@ -28,5 +28,8 @@ flutter:
   assets:
     - assets/logo.png
     - assets/google_logo.png
+    - assets/chat.png
+    - assets/camera.png
+    - assets/home.png
 
 

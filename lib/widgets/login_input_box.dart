@@ -26,15 +26,14 @@ class InputBox extends StatelessWidget {
             ),
           ),
           
-          // Add the TextFormField here to overlay it on top of the placeholder text
           Positioned.fill(
             child: TextFormField(
               controller: controller,
               decoration: InputDecoration(
-                hintText: title, // Using the 'title' as the hint text
+                hintText: title,
                 border: InputBorder.none,
                 contentPadding: const EdgeInsets.symmetric(
-                  vertical: 10, // You can adjust this value to match the positioning of the text
+                  vertical: 10,
                   horizontal: 17,
                 ),
                 filled: true,

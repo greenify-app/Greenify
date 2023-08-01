@@ -61,7 +61,6 @@ class _LoginPageState extends State<LoginPage> {
         onPressed: isLogin
             ? signInWithEmailAndPassword
             : () {
-                // Perform additional check for password confirmation in register mode
                 if (_controllerPassword.text == _controllerConfirmPassword.text) {
                   createUserWithEmailAndPassword();
                 } else {
@@ -134,11 +133,11 @@ class _LoginPageState extends State<LoginPage> {
   @override
 Widget build(BuildContext context) {
   return Scaffold(
-    body: SingleChildScrollView( // Wrap with SingleChildScrollView
+    body: SingleChildScrollView(
       child: Container(
         color: Color.fromARGB(255, 234, 241, 238),
-        height: MediaQuery.of(context).size.height, // Adjust height
-        width: MediaQuery.of(context).size.width, // Adjust width
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

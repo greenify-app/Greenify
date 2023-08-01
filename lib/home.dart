@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:greenify/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:greenify/widgets/navbar.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -26,23 +27,17 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: _title(),
-        ),
         body: Container(
             height: double.infinity,
             width: double.infinity,
-            padding: const EdgeInsets.all(20),
             child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  _userUid(),
-                  _signOutButton(),
-                ]))
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                NavBar(),
+                SizedBox(height: 45),
+                ],
+            ))
                );
   }
 }
-
-
-
