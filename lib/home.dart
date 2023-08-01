@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:greenify/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:greenify/widgets/account_icon.dart';
+import 'package:greenify/widgets/data_frame.dart';
+import 'package:greenify/widgets/monthly_data.dart';
 import 'package:greenify/widgets/navbar.dart';
 
 class HomePage extends StatelessWidget {
@@ -34,6 +37,12 @@ class HomePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
+                AccountIcon(),
+                SizedBox(height: 25),
+                DataFrame(),
+                SizedBox(height: 25),
+                MonthlyDataAnalysis(),
+                SizedBox(height: 25),
                 NavBar(),
                 SizedBox(height: 45),
                 ],
@@ -41,3 +50,4 @@ class HomePage extends StatelessWidget {
                );
   }
 }
+

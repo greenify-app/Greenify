@@ -7,7 +7,7 @@ class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 343,
+      width: 320,
       height: 54,
       child: Stack(
         alignment: Alignment.center,
@@ -16,7 +16,7 @@ class NavBar extends StatelessWidget {
             left: 0,
             top: 0,
             child: Container(
-              width: 343,
+              width: 320,
               height: 54,
               decoration: ShapeDecoration(
                 color: Color(0xFF103F2B),
@@ -35,7 +35,7 @@ class NavBar extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 36,
+            left: 27,
             top: 7.5,
             child: GestureDetector(
               onTap: () {
@@ -72,7 +72,7 @@ class NavBar extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 157,
+            left: 146,
             top: 12,
             child: GestureDetector(
               onTap: () {
@@ -91,7 +91,7 @@ class NavBar extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 269,
+            left: 262,
             top: 12,
             child: GestureDetector(
               onTap: () {

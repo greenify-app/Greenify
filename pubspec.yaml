@@ -31,5 +31,9 @@ flutter:
     - assets/chat.png
     - assets/camera.png
     - assets/home.png
+    - assets/cooking.png
+    - assets/vehicle.png
+    - assets/travel.png
+    - assets/kim.png
 
 
