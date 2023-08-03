@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:greenify/widgets/login_input_box.dart';
-import 'package:greenify/widgets/logo_image.dart';
-import 'package:greenify/widgets/google_sign_in_button.dart';
+import 'package:Greenify/widgets/login_input_box.dart';
+import 'package:Greenify/widgets/logo_image.dart';
+import 'package:Greenify/widgets/google_sign_in_button.dart';
 import 'auth.dart';
 
 class LoginPage extends StatefulWidget {

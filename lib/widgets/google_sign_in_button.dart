@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../auth.dart';
+import '../home.dart';
 
 class GoogleSignInButton extends StatelessWidget {
 
@@ -16,7 +17,14 @@ class GoogleSignInButton extends StatelessWidget {
     return TextButton(
       onPressed: () async {
         try {
-          await Auth().signInWithGoogle();
+          UserCredential userCredential = await Auth().signInWithGoogle();
+          // After successful Google Sign-In, navigate to the HomePage
+          if (userCredential.user != null) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => HomePage()),
+            );
+          }
         } on FirebaseAuthException catch (e) {
           print('Error signing in with Google: ${e.message}');
         }

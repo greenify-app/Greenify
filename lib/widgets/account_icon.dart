@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:greenify/myaccount.dart';
+import 'package:Greenify/myaccount.dart';
 
 class AccountIcon extends StatelessWidget {
   const AccountIcon({Key? key});

@@ -1,4 +1,4 @@
-name: greenify
+name: Greenify
 description: Live a greener life with Greenify!
 
 publish_to: "none"
@@ -16,6 +16,7 @@ dependencies:
   firebase_core: ^2.15.0
   firebase_auth: ^4.7.2
   google_sign_in: ^6.1.4
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -35,5 +36,13 @@ flutter:
     - assets/vehicle.png
     - assets/travel.png
     - assets/kim.png
+    - assets/bigkimwalker.png
+    - assets/backbutton.png
+    - assets/signout.png
+    - assets/background.png   
+    - assets/foreground.png   
+    - assets/app_icon.png   
 
-
+flutter_launcher_icons:
+  android: "launcher_icon"
+  image_path: "assets/app_icon.png"

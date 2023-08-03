@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
-import 'package:greenify/home.dart';
+import 'package:Greenify/home.dart';
 
 class NavBar extends StatelessWidget {
   @override

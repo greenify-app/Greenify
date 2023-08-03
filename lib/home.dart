@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:greenify/auth.dart';
+import 'package:Greenify/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:greenify/widgets/account_icon.dart';
-import 'package:greenify/widgets/data_frame.dart';
-import 'package:greenify/widgets/monthly_data.dart';
-import 'package:greenify/widgets/navbar.dart';
+import 'package:Greenify/widgets/account_icon.dart';
+import 'package:Greenify/widgets/data_frame.dart';
+import 'package:Greenify/widgets/monthly_data.dart';
+import 'package:Greenify/widgets/navbar.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});

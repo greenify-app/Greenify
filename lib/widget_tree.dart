@@ -1,7 +1,7 @@
-import 'package:greenify/auth.dart';
+import 'package:Greenify/auth.dart';
 import 'package:flutter/material.dart';
-import 'package:greenify/home.dart';
-import 'package:greenify/login.dart';
+import 'package:Greenify/home.dart';
+import 'package:Greenify/login.dart';
 
 class WidgetTree extends StatefulWidget {
   const WidgetTree({super.key});
