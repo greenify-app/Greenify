@@ -2,56 +2,57 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:Greenify/widget_tree.dart';
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
-
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  bool _isLoading = true;
-
-  @override
-  void initState() {
-    super.initState();
-    _initializeApp();
-  }
-
-  Future<void> _initializeApp() async {
-    await Future.delayed(const Duration(seconds: 2));
-    setState(() {
-      _isLoading = false;
-    });
-  }
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.green,
+        primaryColor: const Color(0xFF103F2B),
       ),
-      home: _isLoading ? const LoadingScreen() : const WidgetTree(),
+      home: const SplashScreen(),
     );
   }
 }
 
-class LoadingScreen extends StatelessWidget {
-  const LoadingScreen({super.key});
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
+
+  @override
+  _SplashScreenState createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    _loadData();
+  }
+
+  _loadData() async {
+    await Future.delayed(const Duration(milliseconds: 8200));
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const WidgetTree(),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF103F2B),
       body: Center(
-        child: Image.asset('assets/logo.png', width: 200, height: 200),
+        child: Image.asset('assets/logo', width: 1000, height: 1000),
       ),
     );
   }
