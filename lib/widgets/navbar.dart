@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
 import 'package:Greenify/home.dart';
 
 class NavBar extends StatelessWidget {
+  const NavBar({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 320,
       height: 54,
       child: Stack(
@@ -19,11 +20,11 @@ class NavBar extends StatelessWidget {
               width: 320,
               height: 54,
               decoration: ShapeDecoration(
-                color: Color(0xFF103F2B),
+                color: const Color(0xFF103F2B),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
-                shadows: [
+                shadows: const [
                   BoxShadow(
                     color: Color(0x7A103F2B),
                     blurRadius: 4,
@@ -59,7 +60,7 @@ class NavBar extends StatelessWidget {
                     child: Container(
                       width: 28,
                       height: 28,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage("assets/home.png"),
                           fit: BoxFit.contain,
@@ -81,7 +82,7 @@ class NavBar extends StatelessWidget {
               child: Container(
                 width: 28,
                 height: 28,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage("assets/camera.png"),
                     fit: BoxFit.contain,
@@ -100,7 +101,7 @@ class NavBar extends StatelessWidget {
               child: Container(
                 width: 28,
                 height: 28,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage("assets/chat.png"),
                     fit: BoxFit.contain,
@@ -120,8 +121,8 @@ class _widgetName1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Widget 1")),
-      body: Center(
+      appBar: AppBar(title: const Text("Widget 1")),
+      body: const Center(
         child: Text("This is Widget 1"),
       ),
     );
@@ -132,8 +133,8 @@ class _widgetName2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Widget 2")),
-      body: Center(
+      appBar: AppBar(title: const Text("Widget 2")),
+      body: const Center(
         child: Text("This is Widget 2"),
       ),
     );
@@ -144,8 +145,8 @@ class _widgetName3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Widget 3")),
-      body: Center(
+      appBar: AppBar(title: const Text("Widget 3")),
+      body: const Center(
         child: Text("This is Widget 3"),
       ),
     );

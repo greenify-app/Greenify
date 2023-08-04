@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class InfoTable extends StatelessWidget {
+  const InfoTable({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
+        SizedBox(
           width: 319,
           height: 136,
           child: Stack(
@@ -13,7 +15,7 @@ class InfoTable extends StatelessWidget {
               Positioned(
                 left: 0,
                 top: 0,
-                child: Container(
+                child: SizedBox(
                   width: 319,
                   height: 136,
                   child: Stack(
@@ -24,7 +26,7 @@ class InfoTable extends StatelessWidget {
                         child: Container(
                           width: 317,
                           height: 133,
-                          decoration: ShapeDecoration(
+                          decoration: const ShapeDecoration(
                             color: Color(0x66C67575),
                             shape: RoundedRectangleBorder(
                               side: BorderSide(
@@ -43,7 +45,7 @@ class InfoTable extends StatelessWidget {
                           transform: Matrix4.identity()..translate(0.0, 0.0)..rotateZ(-1.57),
                           child: Container(
                             width: 136,
-                            decoration: ShapeDecoration(
+                            decoration: const ShapeDecoration(
                               shape: RoundedRectangleBorder(
                                 side: BorderSide(
                                   width: 0.55,
@@ -60,7 +62,7 @@ class InfoTable extends StatelessWidget {
                         top: 43.96,
                         child: Container(
                           width: 319,
-                          decoration: ShapeDecoration(
+                          decoration: const ShapeDecoration(
                             shape: RoundedRectangleBorder(
                               side: BorderSide(
                                 width: 0.55,
@@ -76,7 +78,7 @@ class InfoTable extends StatelessWidget {
                         top: 87.96,
                         child: Container(
                           width: 319,
-                          decoration: ShapeDecoration(
+                          decoration: const ShapeDecoration(
                             shape: RoundedRectangleBorder(
                               side: BorderSide(
                                 width: 0.55,
@@ -91,7 +93,7 @@ class InfoTable extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 271,
                 top: 15.96,
                 child: Text(
@@ -104,7 +106,7 @@ class InfoTable extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 271,
                 top: 57.96,
                 child: Text(
@@ -117,7 +119,7 @@ class InfoTable extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 271,
                 top: 99.96,
                 child: Text(
@@ -130,7 +132,7 @@ class InfoTable extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 18,
                 top: 15.96,
                 child: Text(
@@ -143,7 +145,7 @@ class InfoTable extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 18,
                 top: 57.96,
                 child: Text(
@@ -156,7 +158,7 @@ class InfoTable extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 18,
                 top: 92.96,
                 child: SizedBox(

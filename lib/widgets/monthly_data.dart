@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 
 class MonthlyDataAnalysis extends StatelessWidget {
+  const MonthlyDataAnalysis({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
+        SizedBox(
           width: 320,
           height: 175,
           child: Stack(
@@ -18,15 +20,15 @@ class MonthlyDataAnalysis extends StatelessWidget {
                   width: 320,
                   height: 175,
                   decoration: ShapeDecoration(
-                    color: Color(0xFFF9F3DB),
+                    color: const Color(0xFFF9F3DB),
                     shape: RoundedRectangleBorder(
-                      side: BorderSide(width: 0.50, color: Color(0xFF103F2B)),
+                      side: const BorderSide(width: 0.50, color: Color(0xFF103F2B)),
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 60,
                 top: 150,
                 child: Text(
@@ -45,7 +47,7 @@ class MonthlyDataAnalysis extends StatelessWidget {
                 top: 131,
                 child: Transform(
                   transform: Matrix4.identity()..translate(0.0, 0.0)..rotateZ(-1.57),
-                  child: Text(
+                  child: const Text(
                     'Carbon Footprint',
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -57,7 +59,7 @@ class MonthlyDataAnalysis extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 48,
                 top: 13,
                 child: Text(
@@ -71,7 +73,7 @@ class MonthlyDataAnalysis extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 100,
                 top: 150,
                 child: Text(
@@ -85,7 +87,7 @@ class MonthlyDataAnalysis extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 141,
                 top: 150,
                 child: Text(
@@ -99,7 +101,7 @@ class MonthlyDataAnalysis extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 196,
                 top: 150,
                 child: Text(
@@ -113,7 +115,7 @@ class MonthlyDataAnalysis extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 242,
                 top: 150,
                 child: Text(
@@ -127,7 +129,7 @@ class MonthlyDataAnalysis extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 285,
                 top: 150,
                 child: Text(
@@ -144,7 +146,7 @@ class MonthlyDataAnalysis extends StatelessWidget {
               Positioned(
                 left: 46,
                 top: 34,
-                child: Container(
+                child: SizedBox(
                   width: 278,
                   height: 107,
                   child: Stack(
@@ -156,7 +158,7 @@ class MonthlyDataAnalysis extends StatelessWidget {
                           transform: Matrix4.identity()..translate(0.0, 0.0)..rotateZ(-1.57),
                           child: Container(
                             width: 106.12,
-                            decoration: ShapeDecoration(
+                            decoration: const ShapeDecoration(
                               shape: RoundedRectangleBorder(
                                 side: BorderSide(
                                   width: 1.50,
@@ -173,7 +175,7 @@ class MonthlyDataAnalysis extends StatelessWidget {
                         top: 107,
                         child: Container(
                           width: 278,
-                          decoration: ShapeDecoration(
+                          decoration: const ShapeDecoration(
                             shape: RoundedRectangleBorder(
                               side: BorderSide(
                                 width: 1.50,

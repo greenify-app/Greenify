@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:Greenify/myaccount.dart';
 
 class AccountIcon extends StatelessWidget {
-  const AccountIcon({Key? key});
+   
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => MyAccount()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const MyAccount()));
       },
       child: Padding(
         padding: const EdgeInsets.fromLTRB(250, 0, 0, 0),
-        child: Container(
+        child: SizedBox(
         width: 50,
         height: 50,
         child: Stack(
@@ -23,7 +23,7 @@ class AccountIcon extends StatelessWidget {
           child: Container(
             width: 50,
             height: 50,
-            decoration: ShapeDecoration(
+            decoration: const ShapeDecoration(
               color: Color(0xFFD9D9D9),
               shape: OvalBorder(
                 side: BorderSide(
@@ -41,7 +41,7 @@ class AccountIcon extends StatelessWidget {
           child: Container(
             width: 50,
             height: 50,
-            decoration: ShapeDecoration(
+            decoration: const ShapeDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/kim.png'),
                 fit: BoxFit.fill,

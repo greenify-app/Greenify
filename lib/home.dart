@@ -11,26 +11,14 @@ class HomePage extends StatelessWidget {
 
   final User? user = Auth().currentUser;
 
-  Future<void> signOut() async {
-    await Auth().signOut();
-  }
-
-  Widget _title() {
-    return const Text('FirebaseAuth Demo');
-  }
-
   Widget _userUid() {
     return Text(user?.email ?? 'User email');
   }
 
-  Widget _signOutButton() {
-    return ElevatedButton(onPressed: signOut, child: const Text('Sign Out'));
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Container(
+    return  Scaffold(
+        body: SizedBox(
             height: double.infinity,
             width: double.infinity,
             child: Column(

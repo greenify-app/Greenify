@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:Greenify/home.dart';
 import 'package:Greenify/login.dart';
@@ -11,9 +10,9 @@ class MyAccount extends StatelessWidget {
   const MyAccount({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
-        body: Container(
+        body: SizedBox(
           width: double.infinity,
           height: double.infinity,
           
@@ -48,6 +47,8 @@ class MyAccount extends StatelessWidget {
 }
 
 class SignOutButton extends StatelessWidget {
+  const SignOutButton({super.key});
+
   @override
   Widget build(BuildContext context) {
     return TextButton(
@@ -56,7 +57,7 @@ class SignOutButton extends StatelessWidget {
           await Auth().signOut();
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => LoginPage()),
+            MaterialPageRoute(builder: (context) => const LoginPage()),
           );
         } catch (e) {
           print('Error signing out: $e');
@@ -65,7 +66,7 @@ class SignOutButton extends StatelessWidget {
         child: Container(
         width: 32,
         height: 32,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
         image: AssetImage("assets/signout.png"),
         fit: BoxFit.contain,
@@ -79,9 +80,11 @@ class SignOutButton extends StatelessWidget {
 
          
 class GreenifyCopyright extends StatelessWidget {
+  const GreenifyCopyright({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         Text(
           'Created by Greenify @2023',
@@ -98,9 +101,11 @@ class GreenifyCopyright extends StatelessWidget {
 }
 
 class UserName extends StatelessWidget {
+  const UserName({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         Text(
           'Kim Walker',
@@ -117,11 +122,13 @@ class UserName extends StatelessWidget {
 }
 
 class BigAccountIcon extends StatelessWidget {
+  const BigAccountIcon({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
+        SizedBox(
           width: 125,
           height: 125,
           child: Stack(
@@ -132,7 +139,7 @@ class BigAccountIcon extends StatelessWidget {
                 child: Container(
                   width: 125,
                   height: 125,
-                  decoration: ShapeDecoration(
+                  decoration: const ShapeDecoration(
                     color: Color(0xFFD9D9D9),
                     shape: OvalBorder(
                       side: BorderSide(
@@ -150,7 +157,7 @@ class BigAccountIcon extends StatelessWidget {
                 child: Container(
                   width: 125,
                   height: 125,
-                  decoration: ShapeDecoration(
+                  decoration: const ShapeDecoration(
                     image: DecorationImage(
                       image: AssetImage("assets/bigkimwalker.png"),
                       fit: BoxFit.fill,
@@ -168,6 +175,8 @@ class BigAccountIcon extends StatelessWidget {
 }
 
 class BackButton extends StatelessWidget {
+  const BackButton({super.key});
+
   @override
   Widget build(BuildContext context) {
     return TextButton(
@@ -177,7 +186,7 @@ class BackButton extends StatelessWidget {
         child: Container(
         width: 55,
         height: 37,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
         image: AssetImage("assets/backbutton.png"),
         fit: BoxFit.contain,

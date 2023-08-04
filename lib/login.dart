@@ -106,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
     children: [
       TextSpan(
         text: isLogin? 'Don’t have an account yet? ' : 'Already have an account? ',
-        style: TextStyle(
+        style: const TextStyle(
           color: Color(0xFF103F2B),
           fontSize: 15,
           fontStyle: FontStyle.italic,
@@ -116,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
       TextSpan(
         text: isLogin? 'Sign Up' : 'Login',
-        style: TextStyle(
+        style: const TextStyle(
           color: Color(0xFFE01010),
           fontSize: 15,
           fontStyle: FontStyle.italic,
@@ -135,7 +135,7 @@ Widget build(BuildContext context) {
   return Scaffold(
     body: SingleChildScrollView(
       child: Container(
-        color: Color.fromARGB(255, 234, 241, 238),
+        color: const Color.fromARGB(255, 234, 241, 238),
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.all(20),
@@ -143,36 +143,36 @@ Widget build(BuildContext context) {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            SizedBox(height: 65),
+            const SizedBox(height: 65),
             const Logo(width: 125, height: 125),
-            SizedBox(height: 60),
+            const SizedBox(height: 60),
             InputBox(
               title: 'Email',
               controller: _controllerEmail,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             InputBox(
               title: 'Password',
               controller: _controllerPassword,
             ),
             if (!isLogin)
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
             if (!isLogin)
               InputBox(
                 title: 'Confirm Password',
                 controller: _controllerConfirmPassword,
               ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             _errorMessage(),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             _submitButton(),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             const Or(),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             GoogleSignInButton(
               displaytext: isLogin? 'Login With Google' : 'Signup With Google',
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             _loginOrRegisterButton(),
           ],
         ),
