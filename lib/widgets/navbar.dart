@@ -1,3 +1,4 @@
+import 'package:Greenify/capture.dart';
 import 'package:flutter/material.dart';
 
 import 'package:Greenify/home.dart';
@@ -77,7 +78,7 @@ class NavBar extends StatelessWidget {
             top: 12,
             child: GestureDetector(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => _widgetName2()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => CapturePage()));
               },
               child: Container(
                 width: 28,
